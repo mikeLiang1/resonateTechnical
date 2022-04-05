@@ -1,0 +1,44 @@
+.contactsPage {
+  display: flex;
+  flex-direction: row;
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  border: 1px solid #a1a4ac;
+  height: 100vh;
+  color: #4b4d59;
+}
+.contactsList p {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14pt;
+}
+
+.contactInformation {
+  color: #4b4d59;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+}
+
+.phoneEmail {
+  display: flex;
+  flex-direction: column;
+}
+
+.adressUser {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
