@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Contacts from "./pages/Contacts";
+import Contacts from "./pages/contacts/Contacts";
 
 import NavBar from "./components/NavBar";
 

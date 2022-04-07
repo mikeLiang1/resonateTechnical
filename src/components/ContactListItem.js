@@ -1,19 +1,21 @@
 import React from "react";
 import { Initial } from "react-initial";
 
-function NavBar({ item }) {
+function ContactListItem({ item, onClick }) {
+  //console.log(item);
+  console.log(item);
   return (
-    <div className="contactListItem">
+    <div className="contactListItem" onClick={onClick}>
       <Initial
         className="contactImage"
-        name="M"
+        name={item.name}
         seed={5}
         height={40}
         width={40}
         fontSize={20}
       />
-      <p>Mike</p>
+      <p>{item.name}</p>
     </div>
   );
 }
-export default NavBar;
+export default ContactListItem;
