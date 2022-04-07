@@ -3,10 +3,11 @@
   align-items: center;
   max-height: 70px;
   border: 1px solid #a1a4ac;
-  color: #1a73e8;
+
   font-weight: bold;
   padding-left: 20px;
   font-size: 16pt;
+  background: #1ae88f;
 }
 
 .logo {

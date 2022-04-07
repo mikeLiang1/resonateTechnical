@@ -1,6 +1,20 @@
+#root {
+  letter-spacing: 1px;
+  color: #551ae8;
+}
+
 .contactsPage {
   display: flex;
   flex-direction: row;
+  height: calc(100vh - 70px);
+}
+
+.title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
 }
 
 .contactsList {
@@ -8,37 +22,96 @@
   flex-direction: column;
   align-items: center;
   width: 200px;
-  border: 1px solid #a1a4ac;
-  height: 100vh;
-  color: #4b4d59;
+  margin: 10px 5px 0px 10px;
+}
+
+.contactImage {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.contactListItem {
+  width: 100%;
+  margin: 5px 0px 5px 10px;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contactListTitle {
+  font-weight: bold;
+  background: #fcf0da;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .contactsList p {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
   font-size: 14pt;
 }
 
 .contactInformation {
-  color: #4b4d59;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  background: white;
+  margin: 10px;
 }
 
 .information {
   display: flex;
   flex-direction: row;
-  width: 95%;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
-.phoneEmail {
+.informationBox {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.adressUser {
+.infoLogo {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+.boxInfo {
   display: flex;
-  flex-direction: column;
-  align-self: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.titleLogo {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.titleName {
+  margin-bottom: 0px;
+
+  font-size: 30pt;
+  margin-top: 0px;
+}
+
+.titleJob {
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+  font-weight: normal;
+}
+
+.titleDescription p {
+  margin: 5px;
+}
+.titleWords {
+  background-color: #fcf0da;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
 }
