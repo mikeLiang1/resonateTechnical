@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./Contacts.css";
 import ContactListItem from "../../components/ContactListItem";
 
-const ContactList = (props, stateChanger) => {
+const ContactList = ({ list, stateChanger }) => {
   return (
     <div className="contactsList">
       <p className="contactListTitle">Contacts List</p>
-      {props.list.map((item, id) => (
+      {list.map((item, id) => (
         <ContactListItem
           onClick={() => {
-            stateChanger = { item };
+            stateChanger(item);
           }}
           key={id}
           item={item}

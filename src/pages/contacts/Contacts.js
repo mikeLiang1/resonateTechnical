@@ -8,11 +8,12 @@ import ContactListItem from "../../components/ContactListItem";
 import { Initial } from "react-initial";
 import ContactList from "./ContactList";
 import userEvent from "@testing-library/user-event";
+import { useParams } from "react-router-dom";
 
 const Contacts = () => {
   const [currentUser, setCurrentUser] = useState({
-    name: "defaultName",
-    company: { name: "default", bs: "default", catchPhrase: "" },
+    name: "loading...",
+    company: { name: "", bs: "", catchPhrase: "" },
   });
 
   const [allUsers, setAllUsers] = useState([]);
@@ -26,6 +27,12 @@ const Contacts = () => {
       "https://jsonplaceholder.typicode.com/users",
       requestOptions
     );
+    // let data;
+    // try {
+    //   data = await response.json();
+    // } catch {
+    //   console.log("error");
+    // }
     const data = await response.json();
 
     setCurrentUser(data[0]);
@@ -40,20 +47,42 @@ const Contacts = () => {
       <ContactList list={allUsers} stateChanger={setCurrentUser} />
       <div className="contactInformation">
         <div className="title">
-          <Initial
-            name="M"
-            className="titleLogo"
-            seed={5}
-            height={80}
-            width={80}
-            fontSize={50}
-          />
+          {allUsers.length === 0 ? (
+            <Initial
+              name="L"
+              className="titleLogo"
+              seed={5}
+              height={80}
+              width={80}
+              fontSize={50}
+            />
+          ) : (
+            <Initial
+              name={currentUser.name}
+              className="titleLogo"
+              seed={5}
+              height={80}
+              width={80}
+              fontSize={50}
+            />
+          )}
+
           <div className="titleWords">
-            <h1 className="titleName">{currentUser.name}</h1>
-            <h2 className="titleJob">{currentUser.company["name"]}</h2>
+            <h1 className="titleName">
+              {allUsers.length === 0 ? "loading" : currentUser.name}
+            </h1>
+            <h2 className="titleJob">
+              {allUsers.length === 0 ? "loading" : currentUser.company["name"]}
+            </h2>
             <div className="titleDescription">
-              <li>Multi-layered client-server neural-net</li>
-              <li> harness real-time e-markets</li>
+              {allUsers.length === 0 ? (
+                "loading"
+              ) : (
+                <>
+                  <p>{currentUser.company["catchPhrase"]}</p>
+                  <p>{currentUser.company["bs"]}</p>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -61,21 +90,33 @@ const Contacts = () => {
           <div className="informationBox">
             <div className="boxInfo">
               <img className="infoLogo" src={phone} alt="phone logo" />
-              <p>04680380190</p>
+              {allUsers.length === 0 ? "loading" : <p>{currentUser.phone}</p>}
             </div>
             <div className="boxInfo">
               <img className="infoLogo" src={home} alt="home logo" />
-              <p>2a finchley place</p>
+              {allUsers.length === 0 ? (
+                "loading"
+              ) : (
+                <p>
+                  {currentUser.address["street"] +
+                    " " +
+                    currentUser.address["city"]}
+                </p>
+              )}
             </div>
           </div>
           <div className="informationBox">
             <div className="boxInfo">
               <img className="infoLogo" src={email} alt="email logo" />
-              <p>mike.liang839@gmai.com </p>
+              {allUsers.length === 0 ? "loading" : <p>{currentUser.email}</p>}
             </div>
             <div className="boxInfo">
               <img className="infoLogo" src={userImg} alt="user logo" />
-              <p>oneshot303</p>
+              {allUsers.length === 0 ? (
+                "loading"
+              ) : (
+                <p>{currentUser.username}</p>
+              )}
             </div>
           </div>
         </div>

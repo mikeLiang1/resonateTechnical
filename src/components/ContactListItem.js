@@ -1,11 +1,10 @@
 import React from "react";
 import { Initial } from "react-initial";
 
-function ContactListItem({ item, onClick }) {
+function ContactListItem({ item, onClick, onHover }) {
   //console.log(item);
-  console.log(item);
   return (
-    <div className="contactListItem" onClick={onClick}>
+    <div className="contactListItem" onClick={() => onClick()}>
       <Initial
         className="contactImage"
         name={item.name}
